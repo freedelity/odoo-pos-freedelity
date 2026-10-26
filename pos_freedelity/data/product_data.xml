@@ -11,7 +11,6 @@
             <field name="purchase_ok">False</field>
             <field name="taxes_id" eval="[(5, 0, 0)]"/>
             <field name="default_code">FREEDELITY-VOUCHER</field>
-            <field name="categ_id" ref="point_of_sale.product_category_pos"/>
         </record>
     </data>
 </odoo>
