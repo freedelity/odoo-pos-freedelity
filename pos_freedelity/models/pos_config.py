@@ -33,6 +33,13 @@ class PosConfig(models.Model):
             if host and ('/' in host or ':' in host.strip('[]') and not host.startswith('[')):
                 raise ValidationError(_('Enter only the IP address of the Freedelity terminal, without "http://" or port.'))
 
+    @api.model
+    def _freedelity_default_voucher_product_on_install(self):
+        # The field default only applies to new configurations: fill the existing ones.
+        product = self.env.ref('pos_freedelity.product_freedelity_voucher', raise_if_not_found=False)
+        if product:
+            self.search([('freedelity_voucher_product_id', '=', False)]).freedelity_voucher_product_id = product
+
     def open_ui(self):
         for config in self:
             if not config.current_session_id and config.freedelity_enabled:

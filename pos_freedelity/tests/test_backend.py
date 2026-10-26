@@ -19,6 +19,11 @@ class TestFreedelityBackend(TestPoSCommon):
         self.assertEqual(self.config.freedelity_terminal_port, 9005)
         self.assertIn(self.voucher_product, self.config._get_special_products())
 
+    def test_default_voucher_product_on_install(self):
+        self.config.freedelity_voucher_product_id = False
+        self.env['pos.config']._freedelity_default_voucher_product_on_install()
+        self.assertEqual(self.config.freedelity_voucher_product_id, self.voucher_product)
+
     def test_settings_write_through(self):
         settings = self.env['res.config.settings'].create({'pos_config_id': self.config.id})
         settings.pos_freedelity_enabled = True

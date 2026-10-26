@@ -43,18 +43,23 @@ export const baseAmount = (order, lines) =>
         0
     );
 
-export const addDiscountLine = (pos, order, { product, priceUnit, taxes, name, voucherId }) =>
-    pos.addLineToOrder(
+export const addDiscountLine = async (pos, order, { product, priceUnit, taxes, name, voucherId }) => {
+    const line = await pos.addLineToOrder(
         {
             product_id: product,
             product_tmpl_id: product.product_tmpl_id,
             price_unit: priceUnit,
             qty: 1,
             tax_ids: [["link", ...taxes]],
-            full_product_name: name,
             freedelity_voucher_id: voucherId,
         },
         order,
         { force: true },
         false
     );
+    // addLineToOrder resets the name to the product's: show the voucher instead.
+    if (line) {
+        line.full_product_name = name;
+    }
+    return line;
+};
