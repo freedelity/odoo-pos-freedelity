@@ -6,6 +6,9 @@ patch(PaymentScreen.prototype, {
         // The order is final from here on: queue its sale for the terminal before it is synced,
         // so the pending state travels with the order to the server.
         this.pos.freedelity?.onOrderValidated(this.currentOrder);
-        return await super._finalizeValidation(...arguments);
+        const result = await super._finalizeValidation(...arguments);
+        // The order is now on the server (unless offline): report the terminal's answer right away.
+        this.pos.freedelity?.flush();
+        return result;
     },
 });

@@ -24,17 +24,22 @@ export const canBeDiscounted = (tax) => accountTaxHelpers.can_be_discounted(tax)
 export const removeLine = (order, line) => order.removeOrderline(line);
 export const formatCurrency = (pos, amount) => pos.env.utils.formatCurrency(amount);
 
-export const addDiscountLine = (pos, order, { product, priceUnit, taxes, name, voucherId }) =>
-    pos.addLineToOrder(
+export const addDiscountLine = async (pos, order, { product, priceUnit, taxes, name, voucherId }) => {
+    const line = await pos.addLineToOrder(
         {
             product_id: product,
             price_unit: priceUnit,
             qty: 1,
             tax_ids: [["link", ...taxes]],
-            full_product_name: name,
             freedelity_voucher_id: voucherId,
         },
         order,
         { merge: false },
         false
     );
+    // addLineToOrder resets the name to the product's: show the voucher instead.
+    if (line) {
+        line.full_product_name = name;
+    }
+    return line;
+};

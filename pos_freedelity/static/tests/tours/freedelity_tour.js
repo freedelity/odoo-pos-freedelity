@@ -97,6 +97,10 @@ registry.category("web_tour.tours").add("pos_freedelity_identify_and_pay", {
                 trigger: ".o_freedelity_button:contains('Sophie Lambert')",
             },
             payCash(),
+            {
+                content: "the receipt shows the vouchers by name",
+                trigger: ".pos-receipt:contains('5 EUR welcome voucher'):contains('10% birthday voucher')",
+            },
             outboxFlushed(),
         ].flat(),
 });

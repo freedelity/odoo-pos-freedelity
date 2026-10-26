@@ -74,6 +74,8 @@ class TestFreedelityUi(TestPointOfSaleHttpCommon):
         # One discount line per tax group and voucher: the taxable base of each rate is reduced.
         self.assertEqual(len(voucher_lines), 4)
         self.assertEqual(set(voucher_lines.tax_ids.ids), {self.tax_21.id, self.tax_6.id})
+        self.assertEqual(set(voucher_lines.mapped('full_product_name')),
+                         {'5 EUR welcome voucher', '10% birthday voucher'})
 
         self.assertEqual(len(self.terminal.end_sessions), 1)
         sale = self.terminal.end_sessions[0]
