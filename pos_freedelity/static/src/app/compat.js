@@ -9,6 +9,8 @@ export { usePos } from "@point_of_sale/app/store/pos_hook";
 export { ask } from "@point_of_sale/app/store/make_awaitable_dialog";
 
 export const getOrder = (pos) => pos.get_order();
+// The reference stored as pos_reference on the server, e.g. "Order 00003-001-0001".
+export const getSaleReference = (order) => order.name || order.pos_reference || order.uuid;
 export const getLines = (order) => order.get_orderlines();
 export const getOrderTotal = (order) => order.get_total_with_tax();
 export const isRefundOrder = (order) => order._isRefundOrder();

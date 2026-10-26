@@ -36,7 +36,9 @@ export class FreedelityManager {
 
     start() {
         this._timer = setInterval(() => this.flush(), RETRY_INTERVAL);
+        // "online": browser back on the network; "pos-network-online": Odoo 19 reconnected to its server.
         window.addEventListener("online", () => this.flush());
+        window.addEventListener("pos-network-online", () => this.flush());
         this.checkTerminal().then(() => this.flush());
     }
 
@@ -388,7 +390,7 @@ export class FreedelityManager {
             usage.push(voucher?.partialauthorized ? { id: voucherId, value: round(used) } : { id: voucherId });
         }
         return {
-            sale_id: order.name || order.pos_reference || order.uuid,
+            sale_id: compat.getSaleReference(order),
             total: this.goodsTotal(order),
             total_paid: round(compat.getOrderTotal(order)),
             vouchers_usage: usage,
