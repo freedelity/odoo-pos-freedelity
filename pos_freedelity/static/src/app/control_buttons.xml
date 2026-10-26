@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="template" xml:space="preserve">
+    <t t-name="pos_freedelity.ControlButtons" t-inherit="point_of_sale.ControlButtons" t-inherit-mode="extension">
+        <xpath expr="//SelectPartnerButton" position="after">
+            <button t-if="pos.freedelity and !props.showRemainingButtons"
+                    class="o_freedelity_button"
+                    t-att-class="buttonClass"
+                    t-on-click="() => this.clickFreedelity()">
+                <i class="fa fa-heart me-1" t-att-class="{'text-danger': freedelityLabel}"/>
+                <t t-if="freedelityLabel"><t t-esc="freedelityLabel"/></t>
+                <t t-else="">Freedelity</t>
+                <span t-if="pos.freedelity.pendingCount" class="badge text-bg-warning ms-1 o_freedelity_pending"
+                      title="Sales waiting for the terminal" t-esc="pos.freedelity.pendingCount"/>
+            </button>
+        </xpath>
+    </t>
+</templates>

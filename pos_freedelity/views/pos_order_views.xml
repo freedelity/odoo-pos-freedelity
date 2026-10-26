@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_pos_pos_form" model="ir.ui.view">
+        <field name="name">pos.order.form.inherit.pos_freedelity</field>
+        <field name="model">pos.order</field>
+        <field name="inherit_id" ref="point_of_sale.view_pos_pos_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//notebook" position="inside">
+                <page string="Freedelity" name="freedelity" invisible="not freedelity_sync_state and not freedelity_customer_id">
+                    <group>
+                        <group>
+                            <field name="freedelity_customer_name"/>
+                            <field name="freedelity_customer_id" options="{'format': false}"/>
+                            <field name="freedelity_points"/>
+                        </group>
+                        <group>
+                            <field name="freedelity_sync_state"/>
+                            <field name="freedelity_sync_message" invisible="not freedelity_sync_message"/>
+                        </group>
+                    </group>
+                </page>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="view_pos_order_tree" model="ir.ui.view">
+        <field name="name">pos.order.list.inherit.pos_freedelity</field>
+        <field name="model">pos.order</field>
+        <field name="inherit_id" ref="point_of_sale.view_pos_order_tree"/>
+        <field name="arch" type="xml">
+            <field name="state" position="before">
+                <field name="freedelity_sync_state" optional="hide" widget="badge"
+                       decoration-success="freedelity_sync_state == 'done'"
+                       decoration-warning="freedelity_sync_state == 'pending'"
+                       decoration-danger="freedelity_sync_state == 'error'"/>
+            </field>
+        </field>
+    </record>
+
+    <record id="view_pos_order_filter" model="ir.ui.view">
+        <field name="name">pos.order.search.inherit.pos_freedelity</field>
+        <field name="model">pos.order</field>
+        <field name="inherit_id" ref="point_of_sale.view_pos_order_filter"/>
+        <field name="arch" type="xml">
+            <xpath expr="//search" position="inside">
+                <separator/>
+                <filter string="Freedelity: not sent" name="freedelity_not_sent"
+                        domain="[('freedelity_sync_state', 'in', ('pending', 'error'))]"/>
+                <filter string="Freedelity customer" name="freedelity_customer"
+                        domain="[('freedelity_customer_id', '!=', 0)]"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>

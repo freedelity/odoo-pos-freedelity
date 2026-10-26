@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="template" xml:space="preserve">
+    <t t-name="pos_freedelity.FreedelityDialog">
+        <Dialog title.translate="Freedelity" size="'md'" contentClass="'o_freedelity_dialog'">
+
+            <div t-if="state.connectError" class="alert alert-danger d-flex align-items-center gap-2" role="alert">
+                <i class="fa fa-exclamation-triangle"/>
+                <span class="flex-grow-1" t-esc="state.connectError"/>
+                <button class="btn btn-sm btn-outline-danger o_freedelity_retry" t-on-click="() => this.connect()">Retry</button>
+            </div>
+
+            <!-- Waiting for the customer -->
+            <t t-if="!state.connectError and (session.status === 'waiting' or session.status === 'idle')">
+                <div class="d-flex align-items-center gap-3 py-3 o_freedelity_waiting">
+                    <i class="fa fa-circle-o-notch fa-spin fa-2x text-primary"/>
+                    <div>
+                        <div class="fw-bold fs-5">Waiting for the customer</div>
+                        <div class="text-muted">Ask the customer to identify on the terminal: loyalty card, eID or QR code.</div>
+                    </div>
+                </div>
+                <button class="btn btn-link px-0 o_freedelity_search_toggle" t-on-click="toggleSearch">
+                    <i class="fa fa-search me-1"/>Search the customer instead
+                </button>
+                <div t-if="state.searchOpen" class="mt-2 o_freedelity_search">
+                    <div class="d-flex gap-2">
+                        <input class="form-control o_freedelity_pattern" type="text" t-model="state.pattern"
+                               placeholder="Name, email, phone or card number" t-on-keydown="(ev) => ev.key === 'Enter' and this.search()"/>
+                        <input class="form-control o_freedelity_zipcode" style="max-width: 8rem" type="text" t-model="state.zipcode"
+                               placeholder="Postcode" t-on-keydown="(ev) => ev.key === 'Enter' and this.search()"/>
+                        <button class="btn btn-primary o_freedelity_search_button" t-att-disabled="state.searching" t-on-click="search">Search</button>
+                    </div>
+                    <div t-if="state.searching" class="text-muted mt-2"><i class="fa fa-spinner fa-spin me-1"/>Searching…</div>
+                    <div t-if="state.searchError" class="text-danger mt-2" t-esc="state.searchError"/>
+                    <t t-if="state.results">
+                        <div t-if="!state.results.length" class="text-muted mt-2">No customer found.</div>
+                        <div class="list-group mt-2">
+                            <button t-foreach="state.results" t-as="customer" t-key="customer.id"
+                                    class="list-group-item list-group-item-action o_freedelity_result"
+                                    t-on-click="() => this.pickCustomer(customer)">
+                                <span class="fw-bold" t-esc="customerName(customer)"/>
+                                <span class="text-muted ms-2" t-esc="customerPlace(customer)"/>
+                            </button>
+                        </div>
+                    </t>
+                </div>
+            </t>
+
+            <div t-if="!state.connectError and session.status === 'error'" class="alert alert-danger d-flex align-items-center gap-2" role="alert">
+                <span class="flex-grow-1" t-esc="session.error"/>
+                <button class="btn btn-sm btn-outline-danger" t-on-click="retry">Retry</button>
+            </div>
+
+            <!-- Identified customer and vouchers -->
+            <t t-if="session.status === 'identified'">
+                <div class="d-flex align-items-center gap-3 pb-3 border-bottom o_freedelity_customer">
+                    <i class="fa fa-user-circle fa-3x text-primary"/>
+                    <div class="flex-grow-1">
+                        <div class="fw-bold fs-4" t-esc="props.order.freedelity_customer_name"/>
+                        <div class="text-muted">
+                            <span class="o_freedelity_points" t-esc="props.order.freedelity_points"/> points
+                        </div>
+                    </div>
+                </div>
+                <div class="pt-3">
+                    <div class="fw-bold mb-2">Vouchers</div>
+                    <div t-if="session.vouchersStatus === 'loading'" class="text-muted"><i class="fa fa-spinner fa-spin me-1"/>Loading vouchers…</div>
+                    <div t-elif="session.vouchersStatus === 'error'" class="text-danger" t-esc="session.error"/>
+                    <div t-elif="!session.vouchers.length" class="text-muted o_freedelity_no_voucher">This customer has no voucher.</div>
+                    <div t-else="" class="list-group">
+                        <t t-foreach="vouchers" t-as="item" t-key="item.voucher.id">
+                            <label class="list-group-item d-flex align-items-center gap-3 o_freedelity_voucher"
+                                   t-att-class="{'opacity-50': item.blocker and !isSelected(item.voucher)}">
+                                <input class="form-check-input mt-0" type="checkbox"
+                                       t-att-checked="isSelected(item.voucher)"
+                                       t-att-disabled="item.blocker and !isSelected(item.voucher)"
+                                       t-on-change="() => this.toggleVoucher(item.voucher)"/>
+                                <div class="flex-grow-1">
+                                    <div class="fw-bold o_freedelity_voucher_name" t-esc="item.voucher.name"/>
+                                    <div class="small text-muted">
+                                        <t t-if="item.expiry">Valid until <t t-esc="item.expiry"/></t>
+                                        <span t-if="item.blocker" class="ms-2 text-warning" t-esc="item.blocker"/>
+                                    </div>
+                                </div>
+                                <span class="badge text-bg-primary fs-6" t-esc="item.label"/>
+                            </label>
+                        </t>
+                    </div>
+                </div>
+            </t>
+
+            <t t-set-slot="footer">
+                <t t-if="session.status === 'identified'">
+                    <button class="btn btn-primary btn-lg o_freedelity_apply" t-att-disabled="state.applying" t-on-click="apply">Apply</button>
+                    <button class="btn btn-secondary btn-lg" t-on-click="props.close">Close</button>
+                </t>
+                <t t-else="">
+                    <button class="btn btn-secondary btn-lg o_freedelity_hide" t-on-click="props.close">Continue in background</button>
+                    <button class="btn btn-outline-danger btn-lg o_freedelity_stop" t-on-click="stop">Stop</button>
+                </t>
+            </t>
+        </Dialog>
+    </t>
+</templates>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="res_config_settings_view_form" model="ir.ui.view">
+        <field name="name">res.config.settings.view.form.inherit.pos_freedelity</field>
+        <field name="model">res.config.settings</field>
+        <field name="inherit_id" ref="point_of_sale.res_config_settings_view_form"/>
+        <field name="arch" type="xml">
+            <block id="pos_connected_devices_section" position="before">
+                <block title="Freedelity Loyalty" id="pos_freedelity_section">
+                    <setting id="pos_freedelity_setting" string="Freedelity CustomerScreen"
+                             help="Identify customers on the Freedelity terminal, apply their vouchers and register their sales.">
+                        <field name="pos_freedelity_enabled"/>
+                        <div class="content-group mt-2" invisible="not pos_freedelity_enabled">
+                            <div class="row">
+                                <label string="Terminal IP Address" for="pos_freedelity_terminal_host" class="col-lg-4 o_light_label"/>
+                                <field name="pos_freedelity_terminal_host" placeholder="192.168.1.50"
+                                       required="pos_freedelity_enabled"/>
+                            </div>
+                            <div class="row">
+                                <label string="Terminal Port" for="pos_freedelity_terminal_port" class="col-lg-4 o_light_label"/>
+                                <field name="pos_freedelity_terminal_port" options="{'format': false}"/>
+                            </div>
+                            <div class="row">
+                                <label string="Voucher Product" for="pos_freedelity_voucher_product_id" class="col-lg-4 o_light_label"/>
+                                <field name="pos_freedelity_voucher_product_id" required="pos_freedelity_enabled"/>
+                            </div>
+                            <div class="row mt-2">
+                                <div class="col-12">
+                                    <field name="pos_freedelity_auto_start" class="w-auto me-2"/>
+                                    <label for="pos_freedelity_auto_start"/>
+                                </div>
+                            </div>
+                        </div>
+                    </setting>
+                </block>
+            </block>
+        </field>
+    </record>
+</odoo>
