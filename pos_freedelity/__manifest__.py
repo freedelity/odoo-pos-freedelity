@@ -1,7 +1,7 @@
 # Part of pos_freedelity. See LICENSE file for full copyright and licensing details.
 {
     'name': 'Freedelity Loyalty for Point of Sale',
-    'version': '18.0.1.0.0',
+    'version': '19.0.1.0.0',
     'category': 'Sales/Point of Sale',
     'summary': 'Identify loyalty customers, redeem their vouchers and register their sales '
                'with the Freedelity CustomerScreen terminal',

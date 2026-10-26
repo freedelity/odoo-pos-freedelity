@@ -51,7 +51,7 @@ class TestFreedelityBackend(TestPoSCommon):
         })
         pos_user = self.env['res.users'].create({
             'name': 'Cashier', 'login': 'freedelity_cashier',
-            'groups_id': [(6, 0, [self.env.ref('point_of_sale.group_pos_user').id])],
+            'group_ids': [(6, 0, [self.env.ref('point_of_sale.group_pos_user').id])],
         })
         PosOrder = self.env['pos.order'].with_user(pos_user)
         self.assertFalse(PosOrder.freedelity_set_sync_state('unknown-uuid', 'done'))

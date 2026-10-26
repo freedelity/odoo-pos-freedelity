@@ -42,5 +42,5 @@ class PosOrderLine(models.Model):
     freedelity_voucher_id = fields.Integer(string='Freedelity Voucher ID', readonly=True, copy=False)
 
     @api.model
-    def _load_pos_data_fields(self, config_id):
-        return super()._load_pos_data_fields(config_id) + ['freedelity_voucher_id']
+    def _load_pos_data_fields(self, config):
+        return super()._load_pos_data_fields(config) + ['freedelity_voucher_id']
