@@ -190,7 +190,9 @@ msgstr ""
 #: model:ir.model.fields,help:pos_freedelity.field_res_config_settings__pos_freedelity_enabled
 msgid ""
 "Identify customers, apply their vouchers and register sales on a Freedelity "
-"CustomerScreen terminal."
+"CustomerScreen terminal. When enabled, each paid order (reference, totals, "
+"vouchers used, and the name, reference, category, quantity and price of "
+"each product) is sent to the terminal, which forwards it to Freedelity."
 msgstr ""
 
 #. module: pos_freedelity

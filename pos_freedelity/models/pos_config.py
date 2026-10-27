@@ -9,7 +9,8 @@ class PosConfig(models.Model):
 
     freedelity_enabled = fields.Boolean(
         string='Freedelity Loyalty',
-        help='Identify customers, apply their vouchers and register sales on a Freedelity CustomerScreen terminal.')
+        help='Identify customers, apply their vouchers and register sales on a Freedelity CustomerScreen terminal. '
+             'When enabled, each paid order (reference, totals, vouchers used, and the name, reference, category, quantity and price of each product) is sent to the terminal, which forwards it to Freedelity.')
     freedelity_terminal_host = fields.Char(
         string='Terminal IP Address',
         help='Local IP address of the CustomerScreen terminal, e.g. 192.168.1.50. '

@@ -191,8 +191,10 @@ msgstr "Identifizieren Sie Kunden am Freedelity-Terminal, lösen Sie ihre Gutsch
 #: model:ir.model.fields,help:pos_freedelity.field_res_config_settings__pos_freedelity_enabled
 msgid ""
 "Identify customers, apply their vouchers and register sales on a Freedelity "
-"CustomerScreen terminal."
-msgstr "Kunden identifizieren, ihre Gutscheine einlösen und Verkäufe auf einem Freedelity-CustomerScreen-Terminal registrieren."
+"CustomerScreen terminal. When enabled, each paid order (reference, totals, "
+"vouchers used, and the name, reference, category, quantity and price of "
+"each product) is sent to the terminal, which forwards it to Freedelity."
+msgstr "Kunden identifizieren, ihre Gutscheine anwenden und Verkäufe auf einem Freedelity-CustomerScreen-Terminal erfassen. Wenn aktiviert, wird jede bezahlte Bestellung (Referenz, Summen, verwendete Gutscheine sowie Name, Referenz, Kategorie, Menge und Preis jedes Produkts) an das Terminal gesendet, das sie an Freedelity weiterleitet."
 
 #. module: pos_freedelity
 #. odoo-javascript
