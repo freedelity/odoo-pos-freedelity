@@ -486,3 +486,9 @@ msgstr "Warten auf den Kunden"
 #: code:addons/pos_freedelity/static/src/app/freedelity_dialog.xml:0
 msgid "points"
 msgstr "Punkte"
+
+#. module: pos_freedelity
+#. odoo-javascript
+#: code:addons/pos_freedelity/static/src/app/freedelity_manager.js:0
+msgid "This browser blocks access to the Freedelity terminal. Allow \"Local network access\" for this site in the browser settings, then reload the point of sale."
+msgstr "Dieser Browser blockiert den Zugriff auf das Freedelity-Terminal. Erlauben Sie \"Zugriff auf lokales Netzwerk\" für diese Website in den Browsereinstellungen und laden Sie die Kasse neu."
