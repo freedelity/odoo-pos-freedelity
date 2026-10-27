@@ -9,13 +9,13 @@
                 <page string="Freedelity" name="freedelity" invisible="not freedelity_sync_state and not freedelity_customer_id">
                     <group>
                         <group>
-                            <field name="freedelity_customer_name"/>
-                            <field name="freedelity_customer_id" options="{'format': false}"/>
-                            <field name="freedelity_points"/>
+                            <field name="freedelity_customer_name" string="Customer"/>
+                            <field name="freedelity_customer_id" string="Customer ID" options="{'enable_formatting': false}"/>
+                            <field name="freedelity_points" string="Points before sale"/>
                         </group>
                         <group>
-                            <field name="freedelity_sync_state"/>
-                            <field name="freedelity_sync_message" invisible="not freedelity_sync_message"/>
+                            <field name="freedelity_sync_state" string="Status"/>
+                            <field name="freedelity_sync_message" string="Message" invisible="not freedelity_sync_message"/>
                         </group>
                     </group>
                 </page>

@@ -12,16 +12,16 @@
                         <field name="pos_freedelity_enabled"/>
                         <div class="content-group mt-2" invisible="not pos_freedelity_enabled">
                             <div class="row">
-                                <label string="Terminal IP Address" for="pos_freedelity_terminal_host" class="col-lg-4 o_light_label"/>
+                                <label string="Terminal IP Address" for="pos_freedelity_terminal_host" class="col-lg-5 o_light_label"/>
                                 <field name="pos_freedelity_terminal_host" placeholder="192.168.1.50"
                                        required="pos_freedelity_enabled"/>
                             </div>
                             <div class="row">
-                                <label string="Terminal Port" for="pos_freedelity_terminal_port" class="col-lg-4 o_light_label"/>
-                                <field name="pos_freedelity_terminal_port" options="{'format': false}"/>
+                                <label string="Terminal Port" for="pos_freedelity_terminal_port" class="col-lg-5 o_light_label"/>
+                                <field name="pos_freedelity_terminal_port" options="{'enable_formatting': false}"/>
                             </div>
                             <div class="row">
-                                <label string="Voucher Product" for="pos_freedelity_voucher_product_id" class="col-lg-4 o_light_label"/>
+                                <label string="Voucher Product" for="pos_freedelity_voucher_product_id" class="col-lg-5 o_light_label"/>
                                 <field name="pos_freedelity_voucher_product_id" required="pos_freedelity_enabled"/>
                             </div>
                             <div class="row mt-2">
