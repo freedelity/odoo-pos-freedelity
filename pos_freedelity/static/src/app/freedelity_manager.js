@@ -68,8 +68,23 @@ export class FreedelityManager {
             return true;
         } catch (error) {
             this.terminalStatus = "offline";
-            this.pos.notification.add(this.errorMessage(error), { type: "warning" });
+            const message = (await this._localNetworkDenied())
+                ? _t(
+                      "This browser blocks access to the Freedelity terminal. Allow \"Local network access\" for this site in the browser settings, then reload the point of sale."
+                  )
+                : this.errorMessage(error);
+            this.pos.notification.add(message, { type: "warning", sticky: true });
             return false;
+        }
+    }
+
+    /** True when Chrome's Local Network Access permission was refused for this site. */
+    async _localNetworkDenied() {
+        try {
+            const status = await navigator.permissions.query({ name: "local-network-access" });
+            return status.state === "denied";
+        } catch {
+            return false; // browser without Local Network Access: nothing to allow
         }
     }
 
