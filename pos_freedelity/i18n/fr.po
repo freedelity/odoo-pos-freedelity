@@ -175,8 +175,10 @@ msgstr "Identifiez les clients sur le terminal Freedelity, appliquez leurs bons 
 #: model:ir.model.fields,help:pos_freedelity.field_res_config_settings__pos_freedelity_enabled
 msgid ""
 "Identify customers, apply their vouchers and register sales on a Freedelity "
-"CustomerScreen terminal."
-msgstr "Identifier les clients, appliquer leurs bons et enregistrer les ventes sur un terminal Freedelity CustomerScreen."
+"CustomerScreen terminal. When enabled, each paid order (reference, totals, "
+"vouchers used, and the name, reference, category, quantity and price of "
+"each product) is sent to the terminal, which forwards it to Freedelity."
+msgstr "Identifier les clients, appliquer leurs bons et enregistrer les ventes sur un terminal Freedelity CustomerScreen. Une fois activé, chaque commande payée (référence, totaux, bons utilisés, ainsi que le nom, la référence, la catégorie, la quantité et le prix de chaque produit) est envoyée au terminal, qui la transmet à Freedelity."
 
 #. module: pos_freedelity
 #. odoo-javascript

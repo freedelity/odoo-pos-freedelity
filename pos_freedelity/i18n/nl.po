@@ -175,8 +175,10 @@ msgstr "Identificeer klanten op de Freedelity-terminal, pas hun bonnen toe en re
 #: model:ir.model.fields,help:pos_freedelity.field_res_config_settings__pos_freedelity_enabled
 msgid ""
 "Identify customers, apply their vouchers and register sales on a Freedelity "
-"CustomerScreen terminal."
-msgstr "Klanten identificeren, hun bonnen toepassen en verkopen registreren op een Freedelity CustomerScreen-terminal."
+"CustomerScreen terminal. When enabled, each paid order (reference, totals, "
+"vouchers used, and the name, reference, category, quantity and price of "
+"each product) is sent to the terminal, which forwards it to Freedelity."
+msgstr "Klanten identificeren, hun bonnen toepassen en verkopen registreren op een Freedelity CustomerScreen-terminal. Indien ingeschakeld wordt elke betaalde bestelling (referentie, totalen, gebruikte bonnen, en naam, referentie, categorie, hoeveelheid en prijs van elk product) naar de terminal verzonden, die ze doorstuurt naar Freedelity."
 
 #. module: pos_freedelity
 #. odoo-javascript
