@@ -18,13 +18,15 @@ if [ "${2:-}" = stop ]; then
     exit 0
 fi
 podman pod exists "$POD" && podman pod rm -f "$POD" >/dev/null
+podman volume rm -f "$POD-filestore" >/dev/null 2>&1 || true
 podman pod create --name "$POD" -p "$ODOO_PORT:8069" -p "$TERMINAL_PORT:9005" >/dev/null
 podman run -d --pod "$POD" --name "$POD-db" -e POSTGRES_USER=odoo -e POSTGRES_PASSWORD=odoo \
     -e POSTGRES_DB=postgres docker.io/library/postgres:16-alpine >/dev/null
 sleep 5
 IMAGE="localhost/pos-freedelity-dev:$VERSION"
+FILESTORE=(-v "$POD-filestore:/var/lib/odoo")
 RUN=(podman run --rm -i --init --pod "$POD" -e HOST=127.0.0.1 -e USER=odoo -e PASSWORD=odoo
-     -v "$ADDONS:/mnt/extra-addons:ro,Z" "$IMAGE")
+     "${FILESTORE[@]}" -v "$ADDONS:/mnt/extra-addons:ro,Z" "$IMAGE")
 OPTS=(-d "$DB" --addons-path=/usr/lib/python3/dist-packages/odoo/addons,/mnt/extra-addons)
 DEMO=(); [ "$MAJOR" -ge 19 ] && DEMO=(--with-demo)
 "${RUN[@]}" odoo "${OPTS[@]}" -i point_of_sale,pos_freedelity "${DEMO[@]}" --stop-after-init >/dev/null 2>&1
@@ -38,6 +40,6 @@ PY
 podman run -d --init --pod "$POD" --name "$POD-terminal" -v "$ADDONS:/mnt/extra-addons:ro,Z" "$IMAGE" \
     python3 /mnt/extra-addons/pos_freedelity/tests/ecr_mock.py --port 9005 >/dev/null
 podman run -d --init --pod "$POD" --name "$POD-odoo" -e HOST=127.0.0.1 -e USER=odoo -e PASSWORD=odoo \
-    -v "$ADDONS:/mnt/extra-addons:ro,Z" "$IMAGE" odoo -d "$DB" --db-filter="^$DB\$" \
+    "${FILESTORE[@]}" -v "$ADDONS:/mnt/extra-addons:ro,Z" "$IMAGE" odoo -d "$DB" --db-filter="^$DB\$" \
     --addons-path=/usr/lib/python3/dist-packages/odoo/addons,/mnt/extra-addons --dev=xml >/dev/null
 echo "Odoo $VERSION: http://localhost:$ODOO_PORT (admin/admin) - fake terminal: 127.0.0.1:$TERMINAL_PORT"

@@ -1,0 +1,488 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* pos_freedelity
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 19.0-20261015\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-10-27 00:01+0000\n"
+"PO-Revision-Date: 2026-10-27 00:01+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Language: fr\n"
+"Plural-Forms: \n"
+
+#. module: pos_freedelity
+#. odoo-javascript
+#: code:addons/pos_freedelity/static/src/app/freedelity_manager.js:0
+msgid "Add products first"
+msgstr "Ajoutez d'abord des produits"
+
+#. module: pos_freedelity
+#. odoo-javascript
+#: code:addons/pos_freedelity/static/src/app/freedelity_dialog.xml:0
+msgid "Apply"
+msgstr "Appliquer"
+
+#. module: pos_freedelity
+#. odoo-javascript
+#: code:addons/pos_freedelity/static/src/app/freedelity_dialog.xml:0
+msgid ""
+"Ask the customer to identify on the terminal: loyalty card, eID or QR code."
+msgstr "Demandez au client de s'identifier sur le terminal : carte de fidélité, eID ou QR code."
+
+#. module: pos_freedelity
+#. odoo-javascript
+#: code:addons/pos_freedelity/static/src/app/freedelity_dialog.xml:0
+msgid "Close"
+msgstr "Fermer"
+
+#. module: pos_freedelity
+#: model:ir.model,name:pos_freedelity.model_res_config_settings
+msgid "Config Settings"
+msgstr "Paramètres de configuration"
+
+#. module: pos_freedelity
+#. odoo-javascript
+#: code:addons/pos_freedelity/static/src/app/freedelity_dialog.xml:0
+msgid "Continue in background"
+msgstr "Continuer en arrière-plan"
+
+#. module: pos_freedelity
+#: model_terms:ir.ui.view,arch_db:pos_freedelity.view_pos_pos_form
+msgid "Customer"
+msgstr "Client"
+
+#. module: pos_freedelity
+#: model_terms:ir.ui.view,arch_db:pos_freedelity.view_pos_pos_form
+msgid "Customer ID"
+msgstr "ID client"
+
+#. module: pos_freedelity
+#: model:ir.model.fields,field_description:pos_freedelity.field_pos_config__display_name
+#: model:ir.model.fields,field_description:pos_freedelity.field_pos_order__display_name
+#: model:ir.model.fields,field_description:pos_freedelity.field_pos_order_line__display_name
+#: model:ir.model.fields,field_description:pos_freedelity.field_res_config_settings__display_name
+msgid "Display Name"
+msgstr "Nom affiché"
+
+#. module: pos_freedelity
+#. odoo-javascript
+#: code:addons/pos_freedelity/static/src/app/freedelity_dialog.js:0
+msgid "Display this order"
+msgstr "Afficher cette commande"
+
+#. module: pos_freedelity
+#. odoo-python
+#: code:addons/pos_freedelity/models/pos_config.py:0
+msgid ""
+"Enter only the IP address of the Freedelity terminal, without \"http://\" or"
+" port."
+msgstr "Saisissez uniquement l'adresse IP du terminal Freedelity, sans \"http://\" ni port."
+
+#. module: pos_freedelity
+#: model:ir.model.fields.selection,name:pos_freedelity.selection__pos_order__freedelity_sync_state__error
+msgid "Error"
+msgstr "Erreur"
+
+#. module: pos_freedelity
+#. odoo-javascript
+#: code:addons/pos_freedelity/static/src/app/control_buttons.xml:0
+#: code:addons/pos_freedelity/static/src/app/freedelity_dialog.xml:0
+#: model_terms:ir.ui.view,arch_db:pos_freedelity.view_pos_pos_form
+msgid "Freedelity"
+msgstr "Freedelity"
+
+#. module: pos_freedelity
+#: model:ir.model.fields,field_description:pos_freedelity.field_pos_order__freedelity_customer_name
+msgid "Freedelity Customer"
+msgstr "Client Freedelity"
+
+#. module: pos_freedelity
+#: model:ir.model.fields,field_description:pos_freedelity.field_pos_order__freedelity_customer_id
+msgid "Freedelity Customer ID"
+msgstr "ID client Freedelity"
+
+#. module: pos_freedelity
+#: model_terms:ir.ui.view,arch_db:pos_freedelity.res_config_settings_view_form
+msgid "Freedelity CustomerScreen"
+msgstr "Freedelity CustomerScreen"
+
+#. module: pos_freedelity
+#: model:ir.model.fields,field_description:pos_freedelity.field_pos_order__freedelity_data
+msgid "Freedelity Data"
+msgstr "Données Freedelity"
+
+#. module: pos_freedelity
+#: model:ir.model.fields,field_description:pos_freedelity.field_pos_config__freedelity_enabled
+#: model:ir.model.fields,field_description:pos_freedelity.field_res_config_settings__pos_freedelity_enabled
+#: model_terms:ir.ui.view,arch_db:pos_freedelity.res_config_settings_view_form
+msgid "Freedelity Loyalty"
+msgstr "Fidélité Freedelity"
+
+#. module: pos_freedelity
+#: model:ir.model.fields,field_description:pos_freedelity.field_pos_order__freedelity_sync_message
+msgid "Freedelity Message"
+msgstr "Message Freedelity"
+
+#. module: pos_freedelity
+#: model:ir.model.fields,field_description:pos_freedelity.field_pos_order__freedelity_points
+msgid "Freedelity Points"
+msgstr "Points Freedelity"
+
+#. module: pos_freedelity
+#: model:ir.model.fields,field_description:pos_freedelity.field_pos_order__freedelity_sync_state
+msgid "Freedelity Status"
+msgstr "Statut Freedelity"
+
+#. module: pos_freedelity
+#: model:product.template,name:pos_freedelity.product_freedelity_voucher_product_template
+msgid "Freedelity Voucher"
+msgstr "Bon Freedelity"
+
+#. module: pos_freedelity
+#: model:ir.model.fields,field_description:pos_freedelity.field_pos_order_line__freedelity_voucher_id
+msgid "Freedelity Voucher ID"
+msgstr "ID bon Freedelity"
+
+#. module: pos_freedelity
+#: model_terms:ir.ui.view,arch_db:pos_freedelity.view_pos_order_filter
+msgid "Freedelity customer"
+msgstr "Client Freedelity"
+
+#. module: pos_freedelity
+#. odoo-javascript
+#: code:addons/pos_freedelity/static/src/app/freedelity_manager.js:0
+msgid "Freedelity voucher"
+msgstr "Bon Freedelity"
+
+#. module: pos_freedelity
+#: model_terms:ir.ui.view,arch_db:pos_freedelity.view_pos_order_filter
+msgid "Freedelity: not sent"
+msgstr "Freedelity : non envoyé"
+
+#. module: pos_freedelity
+#. odoo-javascript
+#: code:addons/pos_freedelity/static/src/app/freedelity_manager.js:0
+msgid "Freedelity: the sale %s was not registered. %s"
+msgstr "Freedelity : la vente %s n'a pas été enregistrée. %s"
+
+#. module: pos_freedelity
+#: model:ir.model.fields,field_description:pos_freedelity.field_pos_config__id
+#: model:ir.model.fields,field_description:pos_freedelity.field_pos_order__id
+#: model:ir.model.fields,field_description:pos_freedelity.field_pos_order_line__id
+#: model:ir.model.fields,field_description:pos_freedelity.field_res_config_settings__id
+msgid "ID"
+msgstr "ID"
+
+#. module: pos_freedelity
+#: model_terms:ir.ui.view,arch_db:pos_freedelity.res_config_settings_view_form
+msgid ""
+"Identify customers on the Freedelity terminal, apply their vouchers and "
+"register their sales."
+msgstr "Identifiez les clients sur le terminal Freedelity, appliquez leurs bons et enregistrez leurs ventes."
+
+#. module: pos_freedelity
+#: model:ir.model.fields,help:pos_freedelity.field_pos_config__freedelity_enabled
+#: model:ir.model.fields,help:pos_freedelity.field_res_config_settings__pos_freedelity_enabled
+msgid ""
+"Identify customers, apply their vouchers and register sales on a Freedelity "
+"CustomerScreen terminal."
+msgstr "Identifier les clients, appliquer leurs bons et enregistrer les ventes sur un terminal Freedelity CustomerScreen."
+
+#. module: pos_freedelity
+#. odoo-javascript
+#: code:addons/pos_freedelity/static/src/app/freedelity_dialog.xml:0
+msgid "Loading vouchers…"
+msgstr "Chargement des bons…"
+
+#. module: pos_freedelity
+#: model:ir.model.fields,help:pos_freedelity.field_pos_config__freedelity_terminal_host
+#: model:ir.model.fields,help:pos_freedelity.field_res_config_settings__pos_freedelity_terminal_host
+msgid ""
+"Local IP address of the CustomerScreen terminal, e.g. 192.168.1.50. The "
+"terminal must allow the IP address of the device running the point of sale."
+msgstr "Adresse IP locale du terminal CustomerScreen, par ex. 192.168.1.50. Le terminal doit autoriser l'adresse IP de l'appareil qui exécute la caisse."
+
+#. module: pos_freedelity
+#: model_terms:ir.ui.view,arch_db:pos_freedelity.view_pos_pos_form
+msgid "Message"
+msgstr "Message"
+
+#. module: pos_freedelity
+#. odoo-javascript
+#: code:addons/pos_freedelity/static/src/app/freedelity_manager.js:0
+msgid "Minimum purchase %s"
+msgstr "Achat minimum %s"
+
+#. module: pos_freedelity
+#. odoo-javascript
+#: code:addons/pos_freedelity/static/src/app/freedelity_dialog.xml:0
+msgid "Name, email, phone or card number"
+msgstr "Nom, e-mail, téléphone ou numéro de carte"
+
+#. module: pos_freedelity
+#. odoo-javascript
+#: code:addons/pos_freedelity/static/src/app/freedelity_manager.js:0
+msgid "No balance left"
+msgstr "Plus de solde"
+
+#. module: pos_freedelity
+#. odoo-javascript
+#: code:addons/pos_freedelity/static/src/app/freedelity_dialog.xml:0
+msgid "No customer found."
+msgstr "Aucun client trouvé."
+
+#. module: pos_freedelity
+#: model:ir.model.fields,help:pos_freedelity.field_pos_config__freedelity_auto_start
+#: model:ir.model.fields,help:pos_freedelity.field_res_config_settings__pos_freedelity_auto_start
+msgid ""
+"Open a session on the terminal as soon as a product is added to a new order,"
+" so the customer can identify while the order is being rung up."
+msgstr "Ouvre une session sur le terminal dès qu'un produit est ajouté à une nouvelle commande, pour que le client s'identifie pendant l'encodage."
+
+#. module: pos_freedelity
+#. odoo-javascript
+#: code:addons/pos_freedelity/static/src/app/freedelity_manager.js:0
+msgid "Other"
+msgstr "Autre"
+
+#. module: pos_freedelity
+#: model:ir.model,name:pos_freedelity.model_pos_config
+msgid "Point of Sale Configuration"
+msgstr "Configuration du point de vente"
+
+#. module: pos_freedelity
+#: model:ir.model,name:pos_freedelity.model_pos_order_line
+msgid "Point of Sale Order Lines"
+msgstr "Lignes des commandes du point de vente"
+
+#. module: pos_freedelity
+#: model:ir.model,name:pos_freedelity.model_pos_order
+msgid "Point of Sale Orders"
+msgstr "Commandes du point de vente"
+
+#. module: pos_freedelity
+#: model:ir.model.fields,help:pos_freedelity.field_pos_order__freedelity_points
+msgid "Points balance of the customer when they identified, before this sale."
+msgstr "Solde de points du client au moment de son identification, avant cette vente."
+
+#. module: pos_freedelity
+#: model_terms:ir.ui.view,arch_db:pos_freedelity.view_pos_pos_form
+msgid "Points before sale"
+msgstr "Points avant la vente"
+
+#. module: pos_freedelity
+#. odoo-javascript
+#: code:addons/pos_freedelity/static/src/app/freedelity_dialog.xml:0
+msgid "Postcode"
+msgstr "Code postal"
+
+#. module: pos_freedelity
+#: model:ir.model.fields,help:pos_freedelity.field_pos_config__freedelity_voucher_product_id
+#: model:ir.model.fields,help:pos_freedelity.field_res_config_settings__pos_freedelity_voucher_product_id
+msgid ""
+"Product used for the discount lines created when a Freedelity voucher is "
+"applied."
+msgstr "Produit utilisé pour les lignes de remise créées lorsqu'un bon Freedelity est appliqué."
+
+#. module: pos_freedelity
+#. odoo-javascript
+#: code:addons/pos_freedelity/static/src/app/freedelity_dialog.xml:0
+msgid "Retry"
+msgstr "Réessayer"
+
+#. module: pos_freedelity
+#. odoo-javascript
+#: code:addons/pos_freedelity/static/src/app/control_buttons.xml:0
+msgid "Sales waiting for the terminal"
+msgstr "Ventes en attente du terminal"
+
+#. module: pos_freedelity
+#. odoo-javascript
+#: code:addons/pos_freedelity/static/src/app/freedelity_dialog.xml:0
+msgid "Search"
+msgstr "Rechercher"
+
+#. module: pos_freedelity
+#. odoo-javascript
+#: code:addons/pos_freedelity/static/src/app/freedelity_dialog.xml:0
+msgid "Search the customer instead"
+msgstr "Rechercher le client"
+
+#. module: pos_freedelity
+#. odoo-javascript
+#: code:addons/pos_freedelity/static/src/app/freedelity_dialog.xml:0
+msgid "Searching…"
+msgstr "Recherche…"
+
+#. module: pos_freedelity
+#: model:ir.model.fields.selection,name:pos_freedelity.selection__pos_order__freedelity_sync_state__done
+msgid "Sent to terminal"
+msgstr "Envoyé au terminal"
+
+#. module: pos_freedelity
+#. odoo-python
+#: code:addons/pos_freedelity/models/pos_config.py:0
+msgid "Set the Freedelity voucher product in the Point of Sale settings."
+msgstr "Définissez le produit des bons Freedelity dans les paramètres du point de vente."
+
+#. module: pos_freedelity
+#. odoo-python
+#: code:addons/pos_freedelity/models/pos_config.py:0
+msgid ""
+"Set the IP address of the Freedelity terminal in the Point of Sale settings."
+msgstr "Définissez l'adresse IP du terminal Freedelity dans les paramètres du point de vente."
+
+#. module: pos_freedelity
+#: model:ir.model.fields,field_description:pos_freedelity.field_pos_config__freedelity_auto_start
+#: model:ir.model.fields,field_description:pos_freedelity.field_res_config_settings__pos_freedelity_auto_start
+msgid "Start Identification Automatically"
+msgstr "Démarrer l'identification automatiquement"
+
+#. module: pos_freedelity
+#: model_terms:ir.ui.view,arch_db:pos_freedelity.view_pos_pos_form
+msgid "Status"
+msgstr "Statut"
+
+#. module: pos_freedelity
+#. odoo-javascript
+#: code:addons/pos_freedelity/static/src/app/freedelity_dialog.xml:0
+msgid "Stop identification"
+msgstr "Arrêter l'identification"
+
+#. module: pos_freedelity
+#: model:ir.model.fields,help:pos_freedelity.field_pos_order__freedelity_data
+msgid ""
+"Technical: JSON with the vouchers offered by the terminal for this order."
+msgstr "Technique : JSON des bons proposés par le terminal pour cette commande."
+
+#. module: pos_freedelity
+#: model:ir.model.fields,field_description:pos_freedelity.field_pos_config__freedelity_terminal_host
+#: model:ir.model.fields,field_description:pos_freedelity.field_res_config_settings__pos_freedelity_terminal_host
+#: model_terms:ir.ui.view,arch_db:pos_freedelity.res_config_settings_view_form
+msgid "Terminal IP Address"
+msgstr "Adresse IP du terminal"
+
+#. module: pos_freedelity
+#: model:ir.model.fields,field_description:pos_freedelity.field_pos_config__freedelity_terminal_port
+#: model:ir.model.fields,field_description:pos_freedelity.field_res_config_settings__pos_freedelity_terminal_port
+#: model_terms:ir.ui.view,arch_db:pos_freedelity.res_config_settings_view_form
+msgid "Terminal Port"
+msgstr "Port du terminal"
+
+#. module: pos_freedelity
+#. odoo-javascript
+#: code:addons/pos_freedelity/static/src/app/freedelity_dialog.js:0
+msgid "Terminal busy"
+msgstr "Terminal occupé"
+
+#. module: pos_freedelity
+#. odoo-javascript
+#: code:addons/pos_freedelity/static/src/app/freedelity_manager.js:0
+msgid ""
+"The Freedelity terminal (%s) cannot be reached. Check that it is switched "
+"on, on the same network, and that it allows this device."
+msgstr "Le terminal Freedelity (%s) est injoignable. Vérifiez qu'il est allumé, sur le même réseau, et qu'il autorise cet appareil."
+
+#. module: pos_freedelity
+#. odoo-python
+#: code:addons/pos_freedelity/models/pos_config.py:0
+msgid "The Freedelity terminal port must be between 1 and 65535."
+msgstr "Le port du terminal Freedelity doit être compris entre 1 et 65535."
+
+#. module: pos_freedelity
+#. odoo-javascript
+#: code:addons/pos_freedelity/static/src/app/freedelity_manager.js:0
+msgid ""
+"The Freedelity terminal runs an outdated application (%s). Update it to use "
+"it with Odoo."
+msgstr "Le terminal Freedelity utilise une application obsolète (%s). Mettez-la à jour pour l'utiliser avec Odoo."
+
+#. module: pos_freedelity
+#. odoo-javascript
+#: code:addons/pos_freedelity/static/src/app/freedelity_manager.js:0
+msgid "The identification was cancelled on the terminal."
+msgstr "L'identification a été annulée sur le terminal."
+
+#. module: pos_freedelity
+#. odoo-javascript
+#: code:addons/pos_freedelity/static/src/app/freedelity_manager.js:0
+msgid "The terminal does not support this operation. Update its application."
+msgstr "Le terminal ne prend pas en charge cette opération. Mettez son application à jour."
+
+#. module: pos_freedelity
+#. odoo-javascript
+#: code:addons/pos_freedelity/static/src/app/freedelity_manager.js:0
+msgid "The terminal is busy with another customer."
+msgstr "Le terminal est occupé avec un autre client."
+
+#. module: pos_freedelity
+#. odoo-javascript
+#: code:addons/pos_freedelity/static/src/app/freedelity_dialog.js:0
+msgid "The terminal is displaying another order. Display this order instead?"
+msgstr "Le terminal affiche une autre commande. Afficher celle-ci à la place ?"
+
+#. module: pos_freedelity
+#. odoo-javascript
+#: code:addons/pos_freedelity/static/src/app/freedelity_manager.js:0
+msgid "The terminal is not configured yet (unprovisioned)."
+msgstr "Le terminal n'est pas encore configuré (non provisionné)."
+
+#. module: pos_freedelity
+#. odoo-javascript
+#: code:addons/pos_freedelity/static/src/app/freedelity_manager.js:0
+msgid "The terminal no longer knows this order."
+msgstr "Le terminal ne connaît plus cette commande."
+
+#. module: pos_freedelity
+#. odoo-javascript
+#: code:addons/pos_freedelity/static/src/app/freedelity_manager.js:0
+msgid "The terminal rejected the request (missing parameter)."
+msgstr "Le terminal a refusé la demande (paramètre manquant)."
+
+#. module: pos_freedelity
+#. odoo-javascript
+#: code:addons/pos_freedelity/static/src/app/freedelity_dialog.xml:0
+msgid "This customer has no voucher."
+msgstr "Ce client n'a aucun bon."
+
+#. module: pos_freedelity
+#. odoo-javascript
+#: code:addons/pos_freedelity/static/src/app/freedelity_dialog.xml:0
+msgid "Valid until"
+msgstr "Valable jusqu'au"
+
+#. module: pos_freedelity
+#: model:ir.model.fields,field_description:pos_freedelity.field_pos_config__freedelity_voucher_product_id
+#: model:ir.model.fields,field_description:pos_freedelity.field_res_config_settings__pos_freedelity_voucher_product_id
+#: model_terms:ir.ui.view,arch_db:pos_freedelity.res_config_settings_view_form
+msgid "Voucher Product"
+msgstr "Produit des bons"
+
+#. module: pos_freedelity
+#. odoo-javascript
+#: code:addons/pos_freedelity/static/src/app/freedelity_dialog.xml:0
+msgid "Vouchers"
+msgstr "Bons"
+
+#. module: pos_freedelity
+#: model:ir.model.fields.selection,name:pos_freedelity.selection__pos_order__freedelity_sync_state__pending
+msgid "Waiting for terminal"
+msgstr "En attente du terminal"
+
+#. module: pos_freedelity
+#. odoo-javascript
+#: code:addons/pos_freedelity/static/src/app/freedelity_dialog.xml:0
+msgid "Waiting for the customer"
+msgstr "En attente du client"
+
+#. module: pos_freedelity
+#. odoo-javascript
+#: code:addons/pos_freedelity/static/src/app/freedelity_dialog.xml:0
+msgid "points"
+msgstr "points"

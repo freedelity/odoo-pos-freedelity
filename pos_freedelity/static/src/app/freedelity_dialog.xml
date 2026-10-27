@@ -90,12 +90,12 @@
 
             <t t-set-slot="footer">
                 <t t-if="session.status === 'identified'">
-                    <button class="btn btn-primary btn-lg o_freedelity_apply" t-att-disabled="state.applying" t-on-click="apply">Apply</button>
+                    <button class="btn btn-primary btn-lg o_freedelity_apply" t-att-disabled="state.applying or session.vouchersStatus === 'loading'" t-on-click="apply">Apply</button>
                     <button class="btn btn-secondary btn-lg" t-on-click="props.close">Close</button>
                 </t>
                 <t t-else="">
                     <button class="btn btn-secondary btn-lg o_freedelity_hide" t-on-click="props.close">Continue in background</button>
-                    <button class="btn btn-outline-danger btn-lg o_freedelity_stop" t-on-click="stop">Stop</button>
+                    <button class="btn btn-outline-danger btn-lg o_freedelity_stop" t-on-click="stop">Stop identification</button>
                 </t>
             </t>
         </Dialog>
